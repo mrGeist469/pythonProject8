@@ -1,24 +1,3 @@
-# file_1 = ''
-# count_1 = 0
-# with open('1.txt', encoding='utf-8') as file:
-#     for line in file:
-#         count_1 += 1
-#         file_1 += line
-#
-# file_2 = ''
-# count_2 = 0
-# with open('2.txt', encoding='utf-8') as file:
-#     for line in file:
-#         count_2 += 1
-#         file_2 += line
-#
-# file_3 = ''
-# count_3 = 0
-# with open('3.txt', encoding='utf-8') as file:
-#     for line in file:
-#         count_3 += 1
-#         file_3 += line
-
 def read_files(*files_name):
     size_files = {}
     file_1 = ''
@@ -38,15 +17,73 @@ def read_files(*files_name):
                 else:
                     file_3 += line
             size_files[file_name] = count_line
+    print(size_files)
+    if size_files['1.txt'] < size_files['2.txt'] < size_files['3.txt']:
+        with open('4.txt', 'a', encoding='utf-8') as file:
+            file.write('1.txt' + '\n')
+            file.write(str(size_files['1.txt']) + '\n')
+            file.write(file_1 + '\n')
+            file.write('2.txt' + '\n')
+            file.write(str(size_files['2.txt']) + '\n')
+            file.write(file_2 + '\n')
+            file.write('3.txt' + '\n')
+            file.write(str(size_files['3.txt']) + '\n')
+            file.write(file_3 + '\n')
+    elif size_files['1.txt'] > size_files['2.txt'] > size_files['3.txt']:
+        with open('4.txt', 'a', encoding='utf-8') as file:
+            file.write('3.txt' + '\n')
+            file.write(str(size_files['3.txt']) + '\n')
+            file.write(file_3 + '\n')
+            file.write('2.txt' + '\n')
+            file.write(str(size_files['2.txt']) + '\n')
+            file.write(file_2 + '\n')
+            file.write('1.txt' + '\n')
+            file.write(str(size_files['1.txt']) + '\n')
+            file.write(file_1 + '\n')
+    elif size_files['1.txt'] < size_files['2.txt'] or size_files['3.txt'] < size_files['1.txt']:
+        with open('4.txt', 'a', encoding='utf-8') as file:
+            file.write('3.txt' + '\n')
+            file.write(str(size_files['3.txt']) + '\n')
+            file.write(file_3 + '\n')
+            file.write('1.txt' + '\n')
+            file.write(str(size_files['1.txt']) + '\n')
+            file.write(file_1 + '\n')
+            file.write('2.txt' + '\n')
+            file.write(str(size_files['2.txt']) + '\n')
+            file.write(file_2 + '\n')
+    elif size_files['1.txt'] < size_files['2.txt'] or size_files['3.txt'] < size_files['2.txt']:
+        with open('4.txt', 'a', encoding='utf-8') as file:
+            file.write('1.txt' + '\n')
+            file.write(str(size_files['1.txt']) + '\n')
+            file.write(file_1 + '\n')
+            file.write('3.txt' + '\n')
+            file.write(str(size_files['3.txt']) + '\n')
+            file.write(file_3 + '\n')
+            file.write('2.txt' + '\n')
+            file.write(str(size_files['2.txt']) + '\n')
+            file.write(file_2 + '\n')
+    elif size_files['1.txt'] > size_files['2.txt'] or size_files['3.txt'] > size_files['1.txt']:
+        with open('4.txt', 'a', encoding='utf-8') as file:
+            file.write('2.txt' + '\n')
+            file.write(str(size_files['2.txt']) + '\n')
+            file.write(file_2 + '\n')
+            file.write('1.txt' + '\n')
+            file.write(str(size_files['1.txt']) + '\n')
+            file.write(file_1 + '\n')
+            file.write('3.txt' + '\n')
+            file.write(str(size_files['3.txt']) + '\n')
+            file.write(file_3 + '\n')
+    else:
+        with open('4.txt', 'a', encoding='utf-8') as file:
+            file.write('2.txt' + '\n')
+            file.write(str(size_files['2.txt']) + '\n')
+            file.write(file_2 + '\n')
+            file.write('3.txt' + '\n')
+            file.write(str(size_files['3.txt']) + '\n')
+            file.write(file_3 + '\n')
+            file.write('1.txt' + '\n')
+            file.write(str(size_files['1.txt']) + '\n')
+            file.write(file_1 + '\n')
 
 
 read_files('1.txt', '2.txt', '3.txt')
-
-# def write(*files):
-#     with open('4.txt', 'a', encoding='utf-8') as file:
-#         file.write(str(count_1) + '\n')
-#         file.write(file_1)
-#
-#
-# print(count_1)
-
