@@ -17,7 +17,6 @@ def read_files(*files_name):
                 else:
                     file_3 += line
             size_files[file_name] = count_line
-    print(size_files)
     if size_files['1.txt'] < size_files['2.txt'] < size_files['3.txt']:
         with open('4.txt', 'a', encoding='utf-8') as file:
             file.write('1.txt' + '\n')
